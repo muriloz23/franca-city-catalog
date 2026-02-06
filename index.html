@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>França City - Acesso Restrito</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <i class="fas fa-code"></i>
+                    <h2>França City</h2>
+                    <p>Catálogo de Spawns</p>
+                </div>
+                <div class="login-form">
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="passwordInput" placeholder="Digite a senha de acesso">
+                    </div>
+                    <button class="login-btn" onclick="checkPassword()">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Acessar
+                    </button>
+                    <div id="errorMessage" class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Senha incorreta. Tente novamente.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden until login) -->
+    <div id="mainContent" class="main-content" style="display: none;">
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="logo">
+                        <i class="fas fa-code"></i>
+                        <span>França City</span>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="#catalog" class="nav-link active">Catálogo</a>
+                        <button class="logout-btn" onclick="logout()" title="Sair">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Catalog Section -->
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="title-accent">Catálogo</span>
+                        <br>Completo de Spawns
+                    </h2>
+                    <p class="section-description">
+                        Navegue por nossa coleção completa de veículos organizada por categorias
+                    </p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ouro">VIP Ouro</button>
+                    <button class="filter-btn" data-filter="platina">VIP Platina</button>
+                    <button class="filter-btn" data-filter="diamante">VIP Diamante</button>
+                    <button class="filter-btn" data-filter="franca">VIP França</button>
+                    <button class="filter-btn" data-filter="exclusivo">Exclusivo</button>
+                    <button class="filter-btn" data-filter="som">Carro Som</button>
+                    <button class="filter-btn" data-filter="moto">Motos</button>
+                    <button class="filter-btn" data-filter="blindado">Blindados</button>
+                    <button class="filter-btn" data-filter="outros">Outros</button>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar veículo...">
+                    </div>
+                </div>
+
+                <!-- Vehicle Grid -->
+                <div class="vehicle-grid" id="vehicleGrid">
+                    <!-- Os veículos serão carregados dinamicamente aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Catálogo de Spawns - França City. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
