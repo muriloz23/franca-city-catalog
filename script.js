@@ -5,7 +5,7 @@ function checkPassword() {
     const loginScreen = document.getElementById('loginScreen');
     const mainContent = document.getElementById('mainContent');
     
-    const correctPassword = 'saborfrança';
+    const correctPassword = 'saborroxinha';
     
     if (passwordInput.value === correctPassword) {
         // Senha correta - salvar no localStorage
